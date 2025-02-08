@@ -48,7 +48,7 @@ Parameters:
     AllowedPattern: ".+"
     Type: String
     Description: "Github repo owner"
-    Default: "{{cookiecutter.frankruszel}}"
+    Default: "{{cookiecutter.github_repository_owner}}"
   AppRepositoryName:
     Description: Name of the Github Repository
     Type: String
