@@ -1,5 +1,5 @@
 {
-    "questions": [
+    "questions": [       
         {
             "key": "monorepo_project_subfolder",
             "question": "What is subfolder path of your project from the root of the repository?",
@@ -11,8 +11,24 @@
             "default": "Monorepo"
         },
         {
-            "key": "codecommit_repository_name",
-            "question": "What is the CodeCommit repository name?",
+            "key": "github_repository_name",
+            "question": "What is the Github repository name?",
+            "isRequired": true
+        },
+        {
+            "key": "github_repository_owner",
+            "question": "What is the Github Account Name that owns this repository?",
+            "isRequired": true,
+            "default": "frankruszel"
+        },
+        {
+            "key": "email_for_approval",
+            "question": "What email do you want to use for Deployment Approval?",
+            "isRequired": true
+        },
+        {
+            "key": "resource_name_prefix",
+            "question": "What is the prefix for all the resources?",
             "isRequired": true
         },
         {
@@ -40,103 +56,8 @@
             "kind": "info"
         },
         {
-            "key": "testing_stage_name",
-            "question": "Select an index or enter the stage 1's configuration name (as provided during the bootstrapping)",
-            "allowAutofill": true,
-            "isRequired": true
-        },
-        {
-            "key": "testing_stack_name",
-            "question": "What is the sam application stack name for stage 1?",
-            "isRequired": true,
-            "default": "sam-app"
-        },
-        {
-            "key": "testing_pipeline_execution_role",
-            "question": "What is the pipeline execution role ARN for stage 1?",
-            "isRequired": true,
-            "allowAutofill": true,
-            "default": {
-                "keyPath": [
-                    {
-                        "valueOf": "testing_stage_name"
-                    },
-                    "pipeline_execution_role"
-                ]
-            }
-        },
-        {
-            "key": "testing_cloudformation_execution_role",
-            "question": "What is the CloudFormation execution role ARN for stage 1?",
-            "isRequired": true,
-            "allowAutofill": true,
-            "default": {
-                "keyPath": [
-                    {
-                        "valueOf": "testing_stage_name"
-                    },
-                    "cloudformation_execution_role"
-                ]
-            }
-        },
-        {
-            "key": "testing_artifacts_bucket",
-            "question": "What is the S3 bucket name for artifacts for stage 1?",
-            "isRequired": true,
-            "allowAutofill": true,
-            "default": {
-                "keyPath": [
-                    {
-                        "valueOf": "testing_stage_name"
-                    },
-                    "artifacts_bucket"
-                ]
-            }
-        },
-        {
-            "key": "testing_image_repository",
-            "question": "What is the ECR repository URI for stage 1?",
-            "allowAutofill": true,
-            "default": {
-                "keyPath": [
-                    {
-                        "valueOf": "testing_stage_name"
-                    },
-                    "image_repository"
-                ]
-            }
-        },
-        {
-            "key": "testing_region",
-            "question": "What is the AWS region for stage 1?",
-            "isRequired": true,
-            "allowAutofill": true,
-            "default": {
-                "keyPath": [
-                    {
-                        "valueOf": "testing_stage_name"
-                    },
-                    "region"
-                ]
-            }
-        },
-        {
-            "key": "message_test_stage_configured",
-            "question": "Stage 1 configured successfully, configuring stage 2.\n",
-            "kind": "info"
-        },
-        {
-            "key": "message_list_stage_names_prod",
-            "question": {
-                "keyPath": [
-                    "stage_names_message"
-                ]
-            },
-            "kind": "info"
-        },
-        {
             "key": "prod_stage_name",
-            "question": "Select an index or enter the stage 2's configuration name (as provided during the bootstrapping)",
+            "question": "Select an index or enter the stage configuration name (as provided during the bootstrapping)",
             "allowAutofill": true,
             "isRequired": true
         },
@@ -144,7 +65,7 @@
             "key": "prod_stack_name",
             "question": "What is the sam application stack name for stage 2?",
             "isRequired": true,
-            "default": "sam-app-prod"
+            "default": "sam-prod"
         },
         {
             "key": "prod_pipeline_execution_role",
@@ -176,7 +97,7 @@
         },
         {
             "key": "prod_artifacts_bucket",
-            "question": "What is the S3 bucket name for artifacts for stage 2?",
+            "question": "What is the S3 bucket name for artifacts for the stage?",
             "isRequired": true,
             "allowAutofill": true,
             "default": {
@@ -190,7 +111,7 @@
         },
         {
             "key": "prod_image_repository",
-            "question": "What is the ECR repository URI for stage 2?",
+            "question": "What is the ECR repository URI for the stage?",
             "allowAutofill": true,
             "default": {
                 "keyPath": [
@@ -203,7 +124,7 @@
         },
         {
             "key": "prod_region",
-            "question": "What is the AWS region for stage 2?",
+            "question": "What is the AWS region for the stage?",
             "isRequired": true,
             "allowAutofill": true,
             "default": {
@@ -217,7 +138,7 @@
         },
         {
             "key": "message_prod_stage_configured",
-            "question": "Stage 2 configured successfully.\n",
+            "question": "Stage configured successfully.\n",
             "kind": "info"
         },
         {
