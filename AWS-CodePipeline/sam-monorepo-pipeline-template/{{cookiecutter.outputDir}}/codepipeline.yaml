@@ -57,7 +57,7 @@ Parameters:
     AllowedPattern: ".+"
     Type: String
     Description: "Github branch name e.g. development"
-    Default: "{{cookiecutter.monorepo_project_subfolder}}"
+    Default: "{{cookiecutter.main_git_branch}}"
   ProdApprovalSNSEmail:
     Type: String
     Default: "{{cookiecutter.email_for_approval}}"
