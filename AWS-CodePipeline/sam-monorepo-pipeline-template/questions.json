@@ -27,6 +27,11 @@
             "isRequired": true
         },
         {
+            "key": "staff_email_identity",
+            "question": "What email do you want to use for your staff email?",
+            "isRequired": true
+        },
+        {
             "key": "resource_name_prefix",
             "question": "What is the prefix for all the resources?",
             "isRequired": true

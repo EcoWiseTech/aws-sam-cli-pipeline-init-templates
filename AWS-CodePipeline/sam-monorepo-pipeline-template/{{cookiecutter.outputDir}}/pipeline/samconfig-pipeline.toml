@@ -13,7 +13,7 @@ image_repository = "{{cookiecutter.prod_image_repository}}"
 
 [{{cookiecutter.prod_stage_name}}.deploy]
 [{{cookiecutter.prod_stage_name}}.deploy.parameters]
-template = "packaged-prod.yaml"
+template = "template.yaml"
 fail_on_empty_changeset = false
 capabilities = "CAPABILITY_IAM"
 # parameter_overrides = ""
@@ -33,7 +33,7 @@ image_repository = "{{cookiecutter.testing_image_repository}}"
 
 [{{cookiecutter.testing_stage_name}}.deploy]
 [{{cookiecutter.testing_stage_name}}.deploy.parameters]
-template = "packaged-testing.yaml"
+template = "template.yaml"
 fail_on_empty_changeset = false
 capabilities = "CAPABILITY_IAM"
 # parameter_overrides = ""

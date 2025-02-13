@@ -5,6 +5,7 @@
     "github_repository_name": "",
     "github_repository_owner": "",
     "email_for_approval": "",
+    "staff_email_identity": "",
     "resource_name_prefix": "",
     "main_git_branch": "",
     "pipeline_stack_name": "",
